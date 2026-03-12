@@ -1,33 +1,68 @@
+'use client';
+
+import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
+const slides = [
+  { src: 'https://www.aytekchillers.com/img/about.jpg', alt: 'Aytek Fabrika' },
+  { src: 'https://www.aytekchillers.com/img/features/chiller.jpg', alt: 'Chiller Sistemleri' },
+  { src: 'https://www.aytekchillers.com/img/features/kalip.jpg', alt: 'Kalıp Soğutma' },
+  { src: 'https://www.aytekchillers.com/img/features/hvac.jpg', alt: 'HVAC Çözümleri' },
+  { src: 'https://www.aytekchillers.com/img/makineler/mcc/1.jpg', alt: 'MASTERtech' },
+  { src: 'https://www.aytekchillers.com/img/tasarim/tasarim.jpg', alt: 'Tasarım Merkezi' },
+];
+
 export default function Hero() {
   const t = useTranslations('hero');
+  const [current, setCurrent] = useState(0);
+
+  const next = useCallback(() => {
+    setCurrent((c) => (c + 1) % slides.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(next, 4500);
+    return () => clearInterval(timer);
+  }, [next]);
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-dark">
-        {/* Industrial grid texture */}
+      {/* Sliding background images */}
+      {slides.map((slide, i) => (
         <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(11, 61, 110, 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(11, 61, 110, 0.3) 1px, transparent 1px)
-            `,
-            backgroundSize: '40px 40px',
-          }}
-        />
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-dark/70 to-dark" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark to-transparent" />
-      </div>
+          key={i}
+          className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? 'opacity-100' : 'opacity-0'}`}
+        >
+          <Image
+            src={slide.src}
+            alt={slide.alt}
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority={i === 0}
+          />
+        </div>
+      ))}
 
-      {/* Decorative elements */}
-      <div aria-hidden="true" className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[700px] h-[700px] rounded-full border border-primary/15" />
-      <div aria-hidden="true" className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 w-[500px] h-[500px] rounded-full border border-accent/10" />
-      <div aria-hidden="true" className="absolute top-20 left-10 w-32 h-32 rounded-full bg-accent/5 blur-2xl" />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-dark/70" />
+      <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent" />
+
+      {/* Dot navigation */}
+      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Slayt ${i + 1}`}
+            className={`rounded-full transition-all duration-300 ${
+              i === current ? 'w-6 h-2 bg-accent' : 'w-2 h-2 bg-white/40 hover:bg-white/70'
+            }`}
+          />
+        ))}
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center text-white">
@@ -61,8 +96,8 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div aria-hidden="true" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40">
-        <div className="w-px h-8 bg-white/20" />
+      <div aria-hidden="true" className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 z-20">
+        <div className="w-px h-6 bg-white/20" />
         <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>

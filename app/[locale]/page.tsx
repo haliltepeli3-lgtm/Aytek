@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { Link } from '@/i18n/navigation';
 import Hero from '@/components/home/Hero';
 import StatsBar from '@/components/home/StatsBar';
-import ImageSlider from '@/components/home/ImageSlider';
 import VideoSection from '@/components/home/VideoSection';
 
 export async function generateMetadata({
@@ -103,7 +102,6 @@ export default async function HomePage({
 
       <Hero />
       <StatsBar />
-      <ImageSlider />
 
       {/* ─── Ürün Kategorileri ─── */}
       <section className="py-20 px-4 bg-gray-50">
