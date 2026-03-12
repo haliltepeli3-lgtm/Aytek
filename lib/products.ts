@@ -42,7 +42,7 @@ export const products: Product[] = [
       de: ['Kunststoffspritzguss', 'Extrusion', 'Lebensmittelverarbeitung', 'Chemische Prozesse', 'Textil', 'Kraftwerke'],
       fr: ['Injection plastique', 'Extrusion', 'Transformation alimentaire', 'Processus chimiques', 'Textile', 'Centrales électriques'],
     },
-    image: 'https://www.aytekchillers.com/mcc/1.jpg',
+    image: '/images/products/mastertech.jpg',
   },
   {
     slug: 'novatech',
@@ -73,7 +73,7 @@ export const products: Product[] = [
       de: ['Großplastikanlagen', 'Automobillackieranlagen', 'Chemieindustrie', 'Kühllager'],
       fr: ['Grandes installations plastiques', 'Cabines de peinture automobile', 'Industrie chimique', 'Entrepôts frigorifiques'],
     },
-    image: 'https://www.aytekchillers.com/mcc/2.jpg',
+    image: '/images/products/novatech.jpg',
   },
   {
     slug: 'blowtech',
@@ -104,7 +104,7 @@ export const products: Product[] = [
       de: ['Kunststofffilmproduktion', 'Blasformen', 'Polyethylenfilmextrusion'],
       fr: ['Production de films plastiques', 'Moulage par soufflage', 'Extrusion de films polyéthylène'],
     },
-    image: 'https://www.aytekchillers.com/mcc/3.jpg',
+    image: '/images/products/blowtech.jpg',
   },
   {
     slug: 'freetech',
@@ -135,7 +135,7 @@ export const products: Product[] = [
       de: ['Rechenzentren', 'Großfabriken', 'Krankenhäuser', 'Bürogebäude'],
       fr: ['Centres de données', 'Grandes usines', 'Hôpitaux', 'Immeubles de bureaux'],
     },
-    image: 'https://www.aytekchillers.com/mcc/4.jpg',
+    image: '/images/products/freetech.jpg',
   },
   {
     slug: 'co2tech',
@@ -166,7 +166,7 @@ export const products: Product[] = [
       de: ['Supermärkte', 'Kühllager', 'Lebensmittelverarbeitung', 'Pharmaindustrie'],
       fr: ['Supermarchés', 'Entrepôts frigorifiques', 'Transformation alimentaire', 'Industrie pharmaceutique'],
     },
-    image: 'https://www.aytekchillers.com/mcc/5.jpg',
+    image: '/images/products/co2tech.jpg',
   },
   {
     slug: 'chilltech',
@@ -197,7 +197,7 @@ export const products: Product[] = [
       de: ['Kunststoffspritzgussformen', 'Extrusionsköpfe', 'Formvorwärmung', 'Gummivulkanisierung'],
       fr: ['Moules d\'injection plastique', 'Têtes d\'extrusion', 'Préchauffage des moules', 'Vulcanisation du caoutchouc'],
     },
-    image: 'https://www.aytekchillers.com/mcc/6.jpg',
+    image: '/images/products/chilltech.jpg',
   },
   {
     slug: 'pulsetech',
@@ -228,7 +228,7 @@ export const products: Product[] = [
       de: ['Mehrkavitätenwerkzeuge', 'Heißkanalsysteme', 'Große Spritzgussmaschinen', 'Duroplastformen'],
       fr: ['Moules multi-cavités', 'Systèmes de canaux chauds', 'Grandes machines d\'injection', 'Moulage thermodurcissable'],
     },
-    image: 'https://www.aytekchillers.com/mcc/7.jpg',
+    image: '/images/products/pulsetech.jpg',
   },
   {
     slug: 'labtech',
@@ -259,7 +259,7 @@ export const products: Product[] = [
       de: ['MRT-Bildgebungsgeräte', 'PET-Scanner', 'Lasergeräte', 'Forschungslabore', 'Verteidigungselektronik'],
       fr: ['Appareils d\'imagerie IRM', 'Scanners PET', 'Équipements laser', 'Laboratoires de recherche', 'Électronique de défense'],
     },
-    image: 'https://www.aytekchillers.com/mcc/8.jpg',
+    image: '/images/products/labtech.jpg',
   },
   {
     slug: 'multitech',
@@ -290,7 +290,7 @@ export const products: Product[] = [
       de: ['Kunststoffverarbeitung', 'Formkühlung', 'Prozeßwärmeübertragung', 'Laserkühlung'],
       fr: ['Traitement des plastiques', 'Refroidissement de moule', 'Transfert de chaleur de processus', 'Refroidissement laser'],
     },
-    image: 'https://www.aytekchillers.com/mcc/9.jpg',
+    image: '/images/products/multitech.jpg',
   },
   {
     slug: 'thermotech-180',
@@ -321,7 +321,7 @@ export const products: Product[] = [
       de: ['Hochtemperaturspritzguss', 'Gummivulkanisierung', 'Epoxidformen', 'Verbundwerkstoffproduktion'],
       fr: ['Injection haute température', 'Vulcanisation du caoutchouc', 'Moulage époxy', 'Production de matériaux composites'],
     },
-    image: 'https://www.aytekchillers.com/mcc/10.jpg',
+    image: '/images/products/thermotech.jpg',
   },
 ];
 

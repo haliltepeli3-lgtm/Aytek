@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { products, type ProductCategory } from '@/lib/products';
 
@@ -75,8 +76,8 @@ export default async function ProductsPage({
                 key={product.slug}
                 className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-primary/40 hover:shadow-md transition-all duration-200 group"
               >
-                <div className="relative h-48 bg-gradient-to-br from-primary/10 to-primary/30 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-primary/20 select-none">{product.name}</span>
+                <div className="relative h-48 bg-gray-100">
+                  <Image src={product.image} alt={product.name} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
@@ -119,8 +120,8 @@ export default async function ProductsPage({
                 key={product.slug}
                 className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-primary/40 hover:shadow-md transition-all duration-200 group"
               >
-                <div className="relative h-48 bg-gradient-to-br from-primary/10 to-primary/30 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-primary/20 select-none">{product.name}</span>
+                <div className="relative h-48 bg-gray-100">
+                  <Image src={product.image} alt={product.name} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">

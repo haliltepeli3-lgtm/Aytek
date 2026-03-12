@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { products, getProductBySlug, productSlugs } from '@/lib/products';
 
@@ -95,8 +96,8 @@ export default async function ProductDetailPage({
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Image */}
-            <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-primary/30 shadow-sm border border-gray-200 h-80 flex items-center justify-center">
-              <span className="text-6xl font-bold text-primary/20 select-none">{product.name}</span>
+            <div className="relative rounded-2xl overflow-hidden bg-gray-100 shadow-sm border border-gray-200 h-80">
+              <Image src={product.image} alt={product.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" priority />
             </div>
 
             {/* Info */}
@@ -170,8 +171,8 @@ export default async function ProductDetailPage({
                   href={`/urunler/${rel.slug}`}
                   className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-primary/40 hover:shadow-md transition-all duration-200 group"
                 >
-                  <div className="h-40 bg-gradient-to-br from-primary/10 to-primary/30 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary/20 select-none">{rel.name}</span>
+                  <div className="relative h-40 bg-gray-100">
+                    <Image src={rel.image} alt={rel.name} fill className="object-cover" sizes="(max-width: 640px) 100vw, 33vw" />
                   </div>
                   <div className="p-4">
                     <h3 className="font-bold text-dark mb-1">{rel.name}</h3>
