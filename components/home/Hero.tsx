@@ -9,9 +9,9 @@ const slides = [
   { src: 'https://www.aytekchillers.com/img/about.jpg', alt: 'Aytek Fabrika' },
   { src: 'https://www.aytekchillers.com/img/features/chiller.jpg', alt: 'Chiller Sistemleri' },
   { src: 'https://www.aytekchillers.com/img/features/kalip.jpg', alt: 'Kalıp Soğutma' },
-  { src: 'https://www.aytekchillers.com/img/features/hvac.jpg', alt: 'HVAC Çözümleri' },
-  { src: 'https://www.aytekchillers.com/img/makineler/mcc/1.jpg', alt: 'MASTERtech' },
-  { src: 'https://www.aytekchillers.com/img/tasarim/tasarim.jpg', alt: 'Tasarım Merkezi' },
+  { src: '/images/ref1.jpg', alt: 'Chiller Kurulum' },
+  { src: '/images/ref2.jpg', alt: 'MASTERtech Saha' },
+  { src: '/images/ref3.jpg', alt: 'NOVAtech Kurulum' },
 ];
 
 export default function Hero() {
