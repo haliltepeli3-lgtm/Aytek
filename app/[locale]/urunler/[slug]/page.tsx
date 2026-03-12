@@ -1,6 +1,5 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/navigation';
 import { products, getProductBySlug, productSlugs } from '@/lib/products';
@@ -96,15 +95,8 @@ export default async function ProductDetailPage({
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Image */}
-            <div className="relative rounded-2xl overflow-hidden bg-gray-100 shadow-sm border border-gray-200">
-              <Image
-                src={product.image}
-                alt={product.name}
-                width={600}
-                height={450}
-                className="w-full h-auto object-cover"
-                priority
-              />
+            <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-primary/30 shadow-sm border border-gray-200 h-80 flex items-center justify-center">
+              <span className="text-6xl font-bold text-primary/20 select-none">{product.name}</span>
             </div>
 
             {/* Info */}
@@ -178,14 +170,8 @@ export default async function ProductDetailPage({
                   href={`/urunler/${rel.slug}`}
                   className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-primary/40 hover:shadow-md transition-all duration-200 group"
                 >
-                  <div className="relative h-40 bg-gray-100">
-                    <Image
-                      src={rel.image}
-                      alt={rel.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 640px) 100vw, 33vw"
-                    />
+                  <div className="h-40 bg-gradient-to-br from-primary/10 to-primary/30 flex items-center justify-center">
+                    <span className="text-2xl font-bold text-primary/20 select-none">{rel.name}</span>
                   </div>
                   <div className="p-4">
                     <h3 className="font-bold text-dark mb-1">{rel.name}</h3>
