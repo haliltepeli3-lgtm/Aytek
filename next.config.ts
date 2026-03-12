@@ -10,6 +10,10 @@ export default withNextIntl({
         protocol: 'https',
         hostname: 'www.aytekchillers.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+      },
     ],
   },
 });
